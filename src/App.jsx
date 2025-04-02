@@ -10,16 +10,20 @@ function App() {
   const handleAddColor = (newColor) => {
     setColors([newColor, ...colors]);
   };
+  //handle delete
+  const handleDeleteColor = (id) => {
+    setColors(colors.filter((color) => color.id !== id));
+  };
 
   return (
     <>
       <h1>Theme Creator</h1>
       <ColorForm onAddColor={handleAddColor} /> {/* Render ColorForm */}
       {colors.map((color) => (
-        <Color key={color.id} color={color} />
+        <Color key={color.id} color={color} onDelete={()=>handleDeleteColor(color.id)}/> 
       ))}
       <h2>Here I am</h2>
-      yxx
+     
     </>
   );
 }
