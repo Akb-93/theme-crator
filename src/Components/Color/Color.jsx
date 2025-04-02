@@ -5,18 +5,17 @@ import  { useState } from 'react';
 //color function
 
   export default function Color({ color, onDelete }) {
+    
     const [showConfirmation, setShowConfirmation] = useState(false);
   
     const handleDeleteClick = () => {
       setShowConfirmation(true);
     };
-  
-    const handleConfirmDelete = () => {
+  const handleConfirmDelete = () => {
       onDelete();
       setShowConfirmation(false);
     };
-  
-    const handleCancelDelete = () => {
+  const handleCancelDelete = () => {
       setShowConfirmation(false);
     };
 
