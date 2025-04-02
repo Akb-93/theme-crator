@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { uid } from 'uid';
 import ColorInput from './ColorInput';
 import "./ColorForm.css";
-// 
+
+
+
 export default function ColorForm({ onAddColor }) {
 
 // setting states

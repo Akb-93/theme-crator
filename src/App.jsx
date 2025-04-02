@@ -4,6 +4,7 @@ import Color from './Components/Color/Color';
 import ColorForm from './Components/Color/ColorForm'; // import ColorForm
 import './App.css';
 
+
 export default function App() {
   const [colors, setColors] = useState(initialColors);
 
@@ -19,9 +20,15 @@ export default function App() {
     <>
       <h1>Theme Creator</h1>
       <ColorForm onAddColor={handleAddColor} /> {/* render ColorForm */}
-      {colors.map((color) => (
-        <Color key={color.id} color={color} onDelete={()=>handleDeleteColor(color.id)}/> 
-      ))}
+
+      {/* show cards if not show add message */}
+      {colors.length === 0 ? (
+        <p className='add--colors__box'>Add some colors!</p>
+      ) : (
+        colors.map((color) => (
+          <Color key={color.id} color={color} onDelete={() => handleDeleteColor(color.id)} />
+        ))
+      )}
       <h2>Here I am</h2>
      
     </>

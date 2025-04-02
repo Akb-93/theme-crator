@@ -9,3 +9,18 @@
   background: black;
   color: white;
 }
+
+.color-card-hightlight{
+  display: inline;
+  padding: 2px 6px;
+  background: black;
+  color: white;
+}
+
+.add--colors__box{
+
+  display: inline;
+  padding: 2px 6px;
+  background: black;
+  color: white;
+}
