@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { initialColors } from './lib/colors';
 import Color from './Components/Color/Color';
-import ColorForm from './Components/Color/ColorForm'; // Import ColorForm
+import ColorForm from './Components/Color/ColorForm'; // import ColorForm
 import './App.css';
 
-function App() {
+export default function App() {
   const [colors, setColors] = useState(initialColors);
 
   const handleAddColor = (newColor) => {
@@ -18,7 +18,7 @@ function App() {
   return (
     <>
       <h1>Theme Creator</h1>
-      <ColorForm onAddColor={handleAddColor} /> {/* Render ColorForm */}
+      <ColorForm onAddColor={handleAddColor} /> {/* render ColorForm */}
       {colors.map((color) => (
         <Color key={color.id} color={color} onDelete={()=>handleDeleteColor(color.id)}/> 
       ))}
@@ -28,7 +28,7 @@ function App() {
   );
 }
 
-export default App;
+
 console.log("Find Issue 1");
 
 
