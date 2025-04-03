@@ -22,12 +22,21 @@ export default function ColorForm({ onAddColor }) {
 // render input
  return (
    <form onSubmit={handleSubmit}>
-     <label>
-       Role:
-       <input type="text" value={role} onChange={(e) => setRole(e.target.value)}/>
+     <label> Role:
+     <br></br>
+       <input id="role" type="text" value={role} onChange={(e) => setRole(e.target.value)}/>
+       </label>
+       <br></br>
+       <label> Hex:
+       <br></br>
+     <ColorInput id="hex"value={hex} onChange={setHex} />
      </label>
-     <ColorInput label="Hex:" value={hex} onChange={setHex} />
-     <ColorInput label="Contrast Text:" value={contrastText} onChange={setContrastText} />
+     <br></br>
+     <label> Contrast Text:
+     <br></br>
+     <ColorInput id="contrast-text"  value={contrastText} onChange={setContrastText} />
+     </label>
+     <br></br>
      <button type="submit">Add Color</button>
    </form>
  );

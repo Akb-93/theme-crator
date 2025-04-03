@@ -15,12 +15,14 @@ export default function App() {
   const handleDeleteColor = (id) => {
     setColors(colors.filter((color) => color.id !== id));
   };
-
+ 
   return (
     <>
+    <header>
       <h1>Theme Creator</h1>
       <ColorForm onAddColor={handleAddColor} /> {/* render ColorForm */}
-
+      </header>
+      <main>
       {/* show cards if not show add message */}
       {colors.length === 0 ? (
         <p className='add--colors__box'>Add some colors!</p>
@@ -29,8 +31,11 @@ export default function App() {
           <Color key={color.id} color={color} onDelete={() => handleDeleteColor(color.id)} />
         ))
       )}
+      
+      </main>
+      <footer>
       <h2>Here I am</h2>
-     
+      </footer>
     </>
   );
 }
