@@ -57,7 +57,7 @@ export default function ColorForm({ onAddColor, initialValues }) {
         <ColorInput  id="contrast-text" value={contrastText} onChange={setContrastText} />
       </label>
       <br />
-      <button type="submit">{initialValues ? 'Update Color' : 'Add Color'}</button> {/* Highlighted Change: Conditional button text */}
+      <button type="submit">{initialValues ? 'Update Color' : 'Add Color'}</button> 
     </form>
   );
 }
