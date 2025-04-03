@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import "./Color.css";
 import ConfirmationButtons from './ConfirmationButtons';
 import ColorForm from './ColorForm';
