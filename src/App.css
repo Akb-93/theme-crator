@@ -3,11 +3,13 @@ body {
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 
 }
 main{
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 header{

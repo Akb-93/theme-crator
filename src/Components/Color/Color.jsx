@@ -1,9 +1,9 @@
 import  { useState } from 'react';
 import "./Color.css";
 import ConfirmationButtons from './ConfirmationButtons';
-import ColorForm from './ColorForm'; // Import ColorForm
+import ColorForm from './ColorForm';
 
-export default function Color({ color, onDelete, onUpdateColor }) {
+export default function Color({ color, onDelete, onUpdateColor }) { // Highlighted Change: onUpdateColor prop
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
 
@@ -21,10 +21,12 @@ export default function Color({ color, onDelete, onUpdateColor }) {
   };
 
   const handleEditClick = () => {
+    
     setIsEditing(true);
   };
 
   const handleUpdate = (updatedColor) => {
+    console.log("Updated color:", updatedColor);
     onUpdateColor(updatedColor);
     setIsEditing(false);
   };
@@ -50,7 +52,7 @@ export default function Color({ color, onDelete, onUpdateColor }) {
         />
       )}
       {isEditing && (
-        <ColorForm onAddColor={handleUpdate} initialValues={color} />
+        <ColorForm onAddColor={handleUpdate} initialValues={color} /> // Highlighted Change: ColorForm usage
       )}
     </div>
   );
