@@ -1,11 +1,18 @@
-import { useState } from 'react';
+import { useEffect } from 'react';
 import { initialColors } from './lib/colors';
 import Color from './Components/Color/Color';
 import ColorForm from './Components/Color/ColorForm';
 import './App.css';
+import useLocalStorageState from 'use-local-storage-state';
+
+
 
 export default function App() {
-  const [colors, setColors] = useState(initialColors);
+  // use local storage for colors
+  const [colors, setColors] = useLocalStorageState('themeColors', {
+    defaultValue: initialColors,
+  });
+
 
   const handleAddColor = (newColor) => {
     setColors([newColor, ...colors]);
@@ -15,7 +22,7 @@ export default function App() {
     setColors(colors.filter((color) => color.id !== id));
   };
 
-  // Highlighted Change: Added handleUpdateColor function
+  // color update
   const handleUpdateColor = (updatedColor) => {
     console.log("got updated color:", updatedColor);
     setColors(colors.map((color) =>
@@ -23,6 +30,12 @@ export default function App() {
     ));
     console.log("new colors:", colors);
   };
+
+  useEffect(() => {
+    if (!localStorage.getItem('themeColors')) {
+      setColors(initialColors);
+    }
+  }, [setColors]);
 
   return (
     <>
@@ -32,8 +45,7 @@ export default function App() {
       </header>
       <main>
         {colors.length === 0 ? (
-          <p className="add--colors__box">Add some colors!</p>
-        ) : (
+          <p className="add--colors__box">Add some colors!</p>) : (
           colors.map((color) => (
             <Color
               key={color.id}
