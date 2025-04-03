@@ -30,8 +30,8 @@ export default function ColorForm({ onAddColor, initialValues }) {
       contrastText,
     });
     setRole('');
-    setHex('#000000');
-    setContrastText('#FFFFFF');
+    setHex('#3f0097');
+    setContrastText('#ffd15d');
   };
 
   // render input
@@ -40,7 +40,7 @@ export default function ColorForm({ onAddColor, initialValues }) {
       <label>
         Role:
         <br />
-        <input id="role" type="text" value={role}
+        <input required id="role" type="text" value={role}
           onChange={(e) => setRole(e.target.value)}
         />
       </label>
@@ -48,16 +48,16 @@ export default function ColorForm({ onAddColor, initialValues }) {
       <label>
         Hex:
         <br />
-        <ColorInput id="hex" value={hex} onChange={setHex} />
+        <ColorInput  id="hex" value={hex} onChange={setHex} />
       </label>
       <br />
       <label>
         Contrast Text:
         <br />
-        <ColorInput id="contrast-text" value={contrastText} onChange={setContrastText} />
+        <ColorInput  id="contrast-text" value={contrastText} onChange={setContrastText} />
       </label>
       <br />
-      <button type="submit">{initialValues ? 'Update Color' : 'Add Color'}</button> {/* Highlighted Change: Conditional button text */}
+      <button type="submit">{initialValues ? 'Update Color' : 'Add Color'}</button> 
     </form>
   );
 }

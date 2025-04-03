@@ -3,7 +3,7 @@ import "./Color.css";
 import ConfirmationButtons from './ConfirmationButtons';
 import ColorForm from './ColorForm';
 
-export default function Color({ color, onDelete, onUpdateColor }) { // Highlighted Change: onUpdateColor prop
+export default function Color({ color, onDelete, onUpdateColor }) { 
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
 
@@ -52,7 +52,7 @@ export default function Color({ color, onDelete, onUpdateColor }) { // Highlight
         />
       )}
       {isEditing && (
-        <ColorForm onAddColor={handleUpdate} initialValues={color} /> // Highlighted Change: ColorForm usage
+        <ColorForm onAddColor={handleUpdate} initialValues={color} /> 
       )}
     </div>
   );
