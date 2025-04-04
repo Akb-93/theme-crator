@@ -1,15 +1,5 @@
-body {
-  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  padding: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items:center;
-
-}
-
 header{
-  background-color:#5C6BC0;
+  background-color:white;
   display: flex;
   flex-direction: column;
   padding: 30px;

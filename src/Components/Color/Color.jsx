@@ -46,6 +46,8 @@ export default function Color({ color, onDelete, onUpdateColor }) {
       
       <h4>{color.role}</h4>
       <p>contrast: {color.contrastText}</p>
+
+
       <button onClick={handleEditClick}>Edit</button>
       {!showConfirmation && onDelete && <button onClick={handleDeleteClick}>Delete</button>}
       {showConfirmation && (
@@ -55,6 +57,8 @@ export default function Color({ color, onDelete, onUpdateColor }) {
           onCancel={handleCancelDelete}
         />
       )}
+
+      
       {isEditing && (
         <ColorForm onAddColor={handleUpdate} initialValues={color} /> 
       )}
