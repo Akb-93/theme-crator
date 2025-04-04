@@ -3,13 +3,9 @@ body {
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  justify-content: space-between;
+  align-items:center;
 
-}
-main{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
 }
 
 header{
@@ -17,5 +13,5 @@ header{
   display: flex;
   flex-direction: column;
   padding: 30px;
-  max-width: 800px;
+  
 }

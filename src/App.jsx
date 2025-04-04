@@ -58,9 +58,7 @@ export default function App() {
           ))
         )}
       </main>
-      <footer>
-        <h2>Here I am</h2>
-      </footer>
+     
     </>
   );
 }
