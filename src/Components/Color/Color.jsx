@@ -2,6 +2,7 @@ import { useState } from 'react';
 import "./Color.css";
 import ConfirmationButtons from './ConfirmationButtons';
 import ColorForm from './ColorForm';
+import CopyToClipboard from './CopyToClipboard';
 
 export default function Color({ color, onDelete, onUpdateColor }) { 
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -40,6 +41,9 @@ export default function Color({ color, onDelete, onUpdateColor }) {
       }}
     >
       <h3 className="color-card-headline">{color.hex}</h3>
+      
+      <CopyToClipboard hex={color.hex} />
+      
       <h4>{color.role}</h4>
       <p>contrast: {color.contrastText}</p>
       <button onClick={handleEditClick}>Edit</button>
