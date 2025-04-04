@@ -30,7 +30,7 @@ export default function App() {
     ));
     console.log("new colors:", colors);
   };
-
+// checking storage and store if missing
   useEffect(() => {
     if (!localStorage.getItem('themeColors')) {
       setColors(initialColors);
